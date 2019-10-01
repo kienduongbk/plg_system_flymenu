@@ -16,6 +16,13 @@ use Joomla\Event\Event;
  */
 class PlgSystemFlymenu extends JPlugin
 {
+	public function __construct(& $subject, $config)
+	{
+		parent::__construct($subject, $config);
+		// Include the menu functions only once
+		JLoader::register('flymenuHelper', __DIR__ . '/helper.php');
+
+	}
 		/**
 	 * The privacy consent expiration check code is triggered after the page has fully rendered.
 	 *
