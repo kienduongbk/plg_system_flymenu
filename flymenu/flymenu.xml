@@ -11,6 +11,7 @@
 	<description>PLG_SYSTEM_FLYMENU_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="flymenu">flymenu.php</filename>
+		<filename>helper.php</filename>
 		<folder>layout</folder>
 		<folder>assets</folder>
 	</files>
