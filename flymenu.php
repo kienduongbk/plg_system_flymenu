@@ -34,10 +34,10 @@ class PlgSystemFlymenu extends JPlugin
 	{
 		$app = JFactory::getApplication();
 		if($app->isAdmin()) return;
-		$offcanvas = "<div class='flymemu' style='display:block;'>";
+		$offcanvas = "<div class='flymemu' style='display:none;'>";
 		$offcanvas .= \JLayoutHelper::render ('layout.offcanvas', $this->params->get('menutype'), JPATH_PLUGINS . '/system/flymenu');;
 		$offcanvas .= "</div>";
-		$offcanvas .= '<span class="flymenu-offcanvas-toggle><span class="toggle-bars"></span></span>';
+		$offcanvas .= '<button class="flymenu-offcanvas-toggle"><span class="toggle-bars"></span></button>';
 		echo $offcanvas;
 
 	}
@@ -45,7 +45,7 @@ class PlgSystemFlymenu extends JPlugin
 		$app = JFactory::getApplication();
 		if($app->isAdmin()) return;
 		$doc = JFactory::getDocument();
-		$doc->addStyleSheet(JPATH_PLUGINS . '/system/flymenu/assets/css/flymenu.css');
-		$doc->addScript(JPATH_PLUGINS . '/system/flymenu/assets/js/flymenu.js');
+		$doc->addStyleSheet(\JUri::root(true) . 'plugins/system/flymenu/assets/css/flymenu.css');
+		$doc->addScript(\JUri::root(true) . 'plugins/system/flymenu/assets/js/flymenu.js');
 	}
 }
